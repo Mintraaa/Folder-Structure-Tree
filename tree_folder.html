@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Folder Structure Tree</title>
+    <link rel="stylesheet" href="style.css"> <!-- ลิงก์ไปยังไฟล์ CSS สำหรับการกำหนดรูปแบบ -->
+</head>
+<body>
+    <div id="folderTree"></div> <!-- ส่วนที่จะแสดงโครงสร้างโฟลเดอร์ -->
+        <input type="text" id="folderNameInput" placeholder="Enter folder name"> <!-- ช่องข้อมูลสำหรับป้อนชื่อโฟลเดอร์ -->
+        <button class="add-button" onclick="addFolder()">Add Folder</button> <!-- ปุ่มเพิ่มโฟลเดอร์ -->
+        <input type="text" id="fileNameInput" placeholder="Enter file name"> <!-- ช่องข้อมูลสำหรับป้อนชื่อไฟล์ -->
+        <button class="add-button" onclick="addFile()">Add File</button> <!-- ปุ่มเพิ่มไฟล์ -->
+        <input type="text" id="fileNameToDeleteInput" placeholder="Enter file or folder name to delete"> <!-- ช่องข้อมูลสำหรับป้อนชื่อไฟล์หรือโฟลเดอร์ที่ต้องการลบ -->
+        <button class="delete-button" onclick="deleteFile()">Delete File</button> <!-- ปุ่มลบไฟล์หรือโฟลเดอร์ -->
+    <script src="script.js"></script> <!-- ลิงก์ไปยังไฟล์ JavaScript สำหรับการประมวลผลโค้ด -->
+</body>
+</html>

@@ -1,0 +1,37 @@
+.folder, .file {
+    margin-left: 20px; /* กำหนดระยะขอบซ้ายของโฟลเดอร์และไฟล์ */
+}
+
+.folder::before, .file::before {
+    content: ''; /* เพิ่มเนื้อหาในการแสดงของตัวก่อน element */
+    display: inline-block; /* แสดงเนื้อหาในบรรทัดเดียวกันกับข้อความ */
+    width: 16px; /* กำหนดความกว้าง */
+    height: 16px; /* กำหนดความสูง */
+    margin-right: 5px; /* กำหนดระยะห่างขวา */
+    background-size: cover; /* ปรับขนาดของภาพให้พอดีกับพื้นที่ */
+}
+
+.folder::before {
+    background-image: url('./Pig/file-icon.png'); /* กำหนดภาพของไอคอนสำหรับโฟลเดอร์ */
+}
+
+.file::before {
+    background-image: url('./Pig/folder-icon.png'); /* กำหนดภาพของไอคอนสำหรับไฟล์ */
+}
+
+.folder {
+    margin-left: 20px; /* กำหนดระยะขอบซ้ายของโฟลเดอร์ */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นรูปแบบของลูกศรเมื่อนำเมาส์ไปวางที่โฟลเดอร์ */
+}
+
+.delete-button {
+    background-color: red; /* กำหนดสีพื้นหลังของปุ่มลบเป็นสีแดง */
+    color: white; /* กำหนดสีข้อความเป็นสีขาว */
+    border: none; /* ลบเส้นขอบ */
+    padding: 5px 10px; /* กำหนดขนาดของ Padding */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นรูปแบบของมือเมื่อนำเมาส์ไปวางที่ปุ่ม */
+}
+
+.delete-button:hover {
+    background-color: darkred; /* เปลี่ยนสีพื้นหลังของปุ่มลบเป็นสีแดงเข้มเมื่อนำเมาส์ไปวางที่ปุ่ม */
+}

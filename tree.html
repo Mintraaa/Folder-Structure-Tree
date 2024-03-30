@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Folder Tree Structure</title>
+    <style>
+        .tree {
+            margin-left: 20px; /* กำหนดระยะขอบซ้ายของต้นไม้ */
+        }
+    </style>
+</head>
+<body>
+    <div id="tree-container"></div> <!-- สร้างตัวคอนเทนเนอร์สำหรับต้นไม้ -->
+
+    <script>
+        function displayTree(node, container) {
+            const ulElement = document.createElement('ul'); // สร้าง element <ul> สำหรับเก็บรายการของต้นไม้
+            const liElement = document.createElement('li'); // สร้าง element <li> สำหรับแสดงชื่อของ node
+            liElement.textContent = node.name; // กำหนดข้อความให้กับ element <li>
+            ulElement.appendChild(liElement); // เพิ่ม element <li> เข้าไปใน element <ul>
+
+            if (node.children.length > 0) { // ตรวจสอบว่า node มี children หรือไม่
+                node.children.forEach(child => { // วน loop ผ่านทุก child ของ node
+                    const childContainer = document.createElement('div'); // สร้างตัวคอนเทนเนอร์สำหรับ child
+                    childContainer.className = 'tree'; // กำหนดคลาส 'tree' ให้กับ childContainer
+                    displayTree(child, childContainer); // เรียกใช้ฟังก์ชัน displayTree เพื่อสร้างต้นไม้ของ child
+                    ulElement.appendChild(childContainer); // เพิ่ม childContainer เข้าไปใน element <ul>
+                });
+            }
+
+            container.appendChild(ulElement); // เพิ่ม element <ul> เข้าไปในคอนเทนเนอร์ container
+        }
+
+        const treeContainer = document.getElementById('tree-container'); // อ้างอิงถึงคอนเทนเนอร์สำหรับต้นไม้
+        displayTree(root, treeContainer); // เรียกใช้ฟังก์ชัน displayTree เพื่อแสดงโครงสร้างต้นไม้ใน treeContainer
+    </script>
+</body>
+</html>
